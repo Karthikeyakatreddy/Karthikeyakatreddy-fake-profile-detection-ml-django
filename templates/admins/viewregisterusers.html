@@ -1,0 +1,62 @@
+{% extends 'admins/adminbase.html' %} {% load static %} {% block contents %}
+<section class="page-panel">
+  <div class="eyebrow">User Management</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Registered User Details</h1>
+  <p class="page-copy">Review all registered users and activate waiting accounts.</p>
+
+  {% if messages %}
+    {% for message in messages %}
+      <p class="text-success">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+
+  <div class="table-card mt-4">
+    <div class="table-responsive">
+      <table class="table table-bordered bg-light text-dark">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Login ID</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Locality</th>
+            <th>Status</th>
+            <th>Activate</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if data %}
+            {% for i in data %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.loginid }}</td>
+                <td>{{ i.mobile }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.locality }}</td>
+                <td>
+                  <span class="status-pill {% if i.status == 'waiting' %}waiting{% else %}activated{% endif %}">{{ i.status }}</span>
+                </td>
+                <td>
+                  {% if i.status == 'waiting' %}
+                    <form action="{% url 'ActivateUsers' %}" method="POST">
+                      {% csrf_token %}
+                      <input type="hidden" name="uid" value="{{ i.id }}" />
+                      <button type="submit" class="pro-btn" style="min-height: 38px; padding: 9px 14px !important;">Activate</button>
+                    </form>
+                  {% else %}
+                    <span class="status-pill activated">Activated</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr><td colspan="8" class="text-center text-danger">No Registered Users Found.</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

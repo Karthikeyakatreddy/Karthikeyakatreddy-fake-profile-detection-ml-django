@@ -1,0 +1,17 @@
+{% extends 'users/userbase.html' %} {% block contents %}
+<section class="page-panel">
+  <div class="eyebrow">Prediction Report</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Report log</h1>
+  <p class="page-copy">A readable list of previous prediction results saved by the system.</p>
+
+  <div class="log-list mt-4">
+    {% if predictions %}
+      {% for log in predictions %}
+        <div class="log-entry">{{ log.0 }}</div>
+      {% endfor %}
+    {% else %}
+      <div class="log-entry">No prediction logs available yet.</div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

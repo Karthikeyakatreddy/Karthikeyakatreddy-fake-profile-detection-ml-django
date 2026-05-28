@@ -1,0 +1,23 @@
+{% extends 'admins/adminbase.html' %} {% load static %} {% block contents %}
+<section class="dashboard-hero">
+  <div class="page-panel">
+    <div class="eyebrow">Admin Dashboard</div>
+    <h1 class="page-title">Professional <span class="gradient-text">Admin Console</span></h1>
+    <p class="page-copy mx-auto">
+      Manage registered users, review account status, and activate approved users from one clean dashboard.
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><strong>Admin</strong><span>Secure Access</span></div>
+      <div class="stat-card"><strong>Users</strong><span>Registration Review</span></div>
+      <div class="stat-card"><strong>Status</strong><span>Activation Control</span></div>
+      <div class="stat-card"><strong>DNR</strong><span>Project Console</span></div>
+    </div>
+
+    <div class="quick-actions">
+      <a class="pro-btn" href="{% url 'RegisterUsersView' %}"><i class="bi bi-people"></i> View Registered Users</a>
+      <a class="pro-btn secondary" href="{% url 'index' %}"><i class="bi bi-house"></i> Main Website</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

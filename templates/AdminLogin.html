@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} {% block contents %}
+<section class="auth-page">
+  <div class="auth-info">
+    <div class="eyebrow">Secure Admin Access</div>
+    <h1>Control the system from a clean admin panel.</h1>
+    <p>Login as admin to verify registered users, activate accounts, and monitor system access.</p>
+  </div>
+
+  <div class="auth-card">
+    <h2>Admin Login</h2>
+    <p class="auth-subtitle">Enter your administrator credentials to continue.</p>
+    <form action="{% url 'AdminLoginCheck' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="form-label">Login ID</label>
+        <input type="text" class="form-control" name="loginid" required placeholder="Enter admin login ID" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="pswd" required placeholder="Enter password" />
+      </div>
+      <div class="action-row">
+        <button class="pro-btn" type="submit"><i class="bi bi-shield-check"></i> Login</button>
+        <button class="pro-btn secondary" type="reset">Reset</button>
+      </div>
+      {% if messages %}
+        {% for message in messages %}
+          <p class="text-danger text-center mt-3">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    </form>
+  </div>
+</section>
+{% endblock %}

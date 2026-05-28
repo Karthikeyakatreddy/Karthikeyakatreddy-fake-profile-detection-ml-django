@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block contents %}
+<section class="hero-wrap">
+  <div class="container-xxl hero-grid">
+    <div>
+      <div class="eyebrow">AI Powered Profile Risk Detection</div>
+      <h1 class="hero-title">Identify <span class="gradient-text">Fake Online Profiles</span> with confidence.</h1>
+      <p class="hero-copy">
+        A professional machine-learning web system for checking profile behaviour, follower patterns,
+        privacy signals, and suspicious account features through a clean Django dashboard.
+      </p>
+      <div class="action-row">
+        <a class="pro-btn" href="{% url 'UserRegister' %}"><i class="bi bi-person-plus"></i> Create User Account</a>
+        <a class="pro-btn secondary" href="{% url 'UserLogin' %}"><i class="bi bi-box-arrow-in-right"></i> User Login</a>
+        <a class="pro-btn secondary" href="{% url 'AdminLogin' %}"><i class="bi bi-shield-lock"></i> Admin Login</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="security-card">
+        <div class="scan-orb"></div>
+        <div class="metric-list">
+          <div class="metric-item"><small>Profile Picture Signal</small><strong>Scanning</strong></div>
+          <div class="metric-item"><small>Follower / Following Pattern</small><strong>Analysed</strong></div>
+          <div class="metric-item"><small>Privacy & Activity Features</small><strong>Validated</strong></div>
+          <div class="metric-item"><small>Prediction Output</small><strong>0 / 1 Risk</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-xxl feature-grid">
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-cpu"></i></div>
+      <h3>ML Based Prediction</h3>
+      <p>Uses profile behaviour inputs to classify a profile as genuine or suspicious.</p>
+    </div>
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-speedometer2"></i></div>
+      <h3>Fast Dashboard Flow</h3>
+      <p>Separate admin and user dashboards make testing, reviewing, and managing users easier.</p>
+    </div>
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-database-check"></i></div>
+      <h3>Dataset & Reports</h3>
+      <p>View dataset samples and previous prediction records in a clean responsive interface.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

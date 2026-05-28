@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block contents %}
+<section class="register-page">
+  <div class="auth-info">
+    <div class="eyebrow">New User Registration</div>
+    <h1>Create your account for profile analysis.</h1>
+    <p>After registration, the admin can activate your account. Once activated, you can login and use the prediction dashboard.</p>
+    <div class="feature-grid" style="grid-template-columns: 1fr; margin-top: 22px;">
+      <div class="pro-card"><h3>Clean Inputs</h3><p>Professional form layout with validation support from your existing Django form.</p></div>
+    </div>
+  </div>
+
+  <div class="registration-card">
+    <h2>User Register Form</h2>
+    <p class="auth-subtitle">Fill all details carefully.</p>
+    <form action="{% url 'UserRegisterActions' %}" method="POST">
+      {% csrf_token %}
+      <table>
+        <tr><td></td><td>Name</td><td>{{ form.name }}</td></tr>
+        <tr><td></td><td>Login ID</td><td>{{ form.loginid }}</td></tr>
+        <tr><td></td><td>Password</td><td>{{ form.password }}</td></tr>
+        <tr><td></td><td>Mobile</td><td>{{ form.mobile }}</td></tr>
+        <tr><td></td><td>Email</td><td>{{ form.email }}</td></tr>
+        <tr><td></td><td>Locality</td><td>{{ form.locality }}</td></tr>
+        <tr><td></td><td>Address</td><td>{{ form.address }}</td></tr>
+        <tr><td></td><td>City</td><td>{{ form.city }}</td></tr>
+        <tr><td></td><td>State</td><td>{{ form.state }}</td></tr>
+        <tr><td></td><td></td><td>{{ form.status }}</td></tr>
+        <tr><td></td><td></td><td><button class="pro-btn" type="submit"><i class="bi bi-person-plus"></i> Register</button></td></tr>
+      </table>
+      {% if messages %}
+        {% for message in messages %}
+          <p class="text-danger text-center mt-3">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    </form>
+  </div>
+</section>
+{% endblock %}

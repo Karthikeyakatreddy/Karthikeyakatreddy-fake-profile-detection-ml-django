@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fake Profile Identification</title>
+    <meta content="AI based fake online profile identification system" name="description" />
+    <meta content="fake profile, machine learning, cyber security" name="keywords" />
+
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Jost:300,400,500,600,700|Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/pro-ui.css' %}" rel="stylesheet" />
+  </head>
+
+  <body class="public-shell">
+    <header id="header" class="pro-header fixed-top">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto">
+          <a href="{% url 'index' %}"><span>Fake Profile Identification</span></a>
+        </h1>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'AdminLogin' %}">Admin</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'UserLogin' %}">User</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'UserRegister' %}">Register</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="public-main">
+      {% block contents %}{% endblock %}
+    </main>
+
+    <footer id="footer" class="pro-footer">
+      <div class="container">
+        <div class="social-links d-flex justify-content-center">
+          <a href="" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+          <a href="" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div>&copy; Copyright <strong>DNR</strong>. All Rights Reserved.</div>
+        <div class="credits">Designed for a professional AI/ML web experience</div>
+      </div>
+    </footer>
+
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>

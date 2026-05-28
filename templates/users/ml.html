@@ -1,0 +1,29 @@
+{% extends 'users/userbase.html' %}
+{% block contents %}
+<section class="page-panel ml-content">
+  <div class="eyebrow">Machine Learning Overview</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Fake profile identification model</h1>
+  <p class="page-copy">
+    The system analyses profile-level features such as profile picture availability, username structure,
+    description length, privacy status, posts, followers, and following count.
+  </p>
+
+  <div class="feature-grid">
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-person-badge"></i></div>
+      <h3>Profile Signals</h3>
+      <p>Checks account metadata and public profile patterns.</p>
+    </div>
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-bar-chart"></i></div>
+      <h3>Behaviour Patterns</h3>
+      <p>Compares follower and following behaviour to detect suspicious activity.</p>
+    </div>
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-cpu"></i></div>
+      <h3>Prediction</h3>
+      <p>Produces a final genuine/fake classification using your existing backend workflow.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

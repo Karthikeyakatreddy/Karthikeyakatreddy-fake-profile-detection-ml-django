@@ -1,0 +1,36 @@
+{% extends 'users/userbase.html' %}
+{% load static %}
+{% block contents %}
+<section class="page-panel ml-content">
+  <div class="eyebrow">Model Training</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">ANN Training Status</h1>
+  <p class="page-copy">
+    This page uses your existing training view. If TensorFlow is available, it shows accuracy and loss.
+    On lightweight hosting, it displays the TensorFlow availability message instead of breaking the site.
+  </p>
+
+  <div class="result-highlight">
+    <div class="stat-card">
+      <span>Accuracy</span>
+      <strong>{{ acc|default:'Not trained yet' }}</strong>
+    </div>
+    <div class="stat-card">
+      <span>Loss / Status</span>
+      <strong style="font-size: 18px; line-height: 1.5; word-break: break-word;">{{ loss|default:'Run training to view result' }}</strong>
+    </div>
+  </div>
+
+  <div class="feature-grid" style="grid-template-columns: repeat(2, minmax(0,1fr));">
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-graph-up-arrow"></i></div>
+      <h3>Feature Learning</h3>
+      <p>The model learns account patterns from profile metadata and behaviour features.</p>
+    </div>
+    <div class="pro-card">
+      <div class="icon-box"><i class="bi bi-shield-check"></i></div>
+      <h3>Detection Output</h3>
+      <p>The system returns a binary fake-profile prediction using the existing backend connection.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

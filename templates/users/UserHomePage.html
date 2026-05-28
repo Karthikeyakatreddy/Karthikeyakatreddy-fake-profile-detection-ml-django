@@ -1,0 +1,25 @@
+{% extends 'users/userbase.html' %} {% block contents %}
+<section class="dashboard-hero">
+  <div class="page-panel">
+    <div class="eyebrow">User Dashboard</div>
+    <h1 class="page-title">Welcome to your <span class="gradient-text">AI verification workspace</span>.</h1>
+    <p class="page-copy mx-auto">
+      Use the dashboard to view dataset samples, train the model when supported, predict profile authenticity,
+      and review previous prediction reports.
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><strong>ML</strong><span>Prediction Ready</span></div>
+      <div class="stat-card"><strong>CSV</strong><span>Dataset View</span></div>
+      <div class="stat-card"><strong>0/1</strong><span>Fake Profile Output</span></div>
+      <div class="stat-card"><strong>Log</strong><span>Report History</span></div>
+    </div>
+
+    <div class="quick-actions">
+      <a class="pro-btn" href="{% url 'predictTrustWorthy' %}"><i class="bi bi-search"></i> Start Prediction</a>
+      <a class="pro-btn secondary" href="{% url 'DatasetView' %}"><i class="bi bi-table"></i> View Dataset</a>
+      <a class="pro-btn secondary" href="{% url 'report' %}"><i class="bi bi-clipboard-data"></i> View Database</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

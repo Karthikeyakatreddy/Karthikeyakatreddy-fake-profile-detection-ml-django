@@ -1,0 +1,13 @@
+{% extends 'users/userbase.html' %} {% block contents %}
+<section class="page-panel">
+  <div class="eyebrow">Dataset Preview</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Dataset View</h1>
+  <p class="page-copy">Preview of the training dataset rendered through your existing Django view.</p>
+
+  <div class="data-card mt-4">
+    <div class="data-scroll">
+      <pre>{{ data | safe }}</pre>
+    </div>
+  </div>
+</section>
+{% endblock %}

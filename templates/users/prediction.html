@@ -1,0 +1,23 @@
+{% extends 'users/userbase.html' %} {% block contents %}
+<section class="page-panel">
+  <div class="eyebrow">Prediction Form</div>
+  <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Prediction Input</h1>
+  <p class="page-copy">This legacy form keeps the original input names and POST connection.</p>
+
+  <form action="" method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="form-grid">
+      <div><label>Order Date</label><input type="text" id="fname" name="Order_date" required /></div>
+      <div><label>Brand</label><input type="text" id="lname" name="Brand" required /></div>
+      <div><label>Sneaker Name</label><input type="text" id="lname" name="Sneaker_Name" required /></div>
+      <div><label>Retail Price</label><input type="text" id="lname" name="Retail_Price" required /></div>
+      <div><label>Release Date</label><input type="text" id="lname" name="Release_Date" required /></div>
+      <div><label>Shoe Size</label><input type="text" id="lname" name="Shoe_Size" required /></div>
+      <div><label>Buyer</label><input type="text" id="lname" name="Buyer" required /></div>
+    </div>
+    <div class="action-row">
+      <button class="pro-btn" type="submit">Predict</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

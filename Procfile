@@ -1,0 +1,1 @@
+web: gunicorn Fake_Profile_Identification_using_ANN.wsgi:application

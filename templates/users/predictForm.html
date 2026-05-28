@@ -1,0 +1,69 @@
+{% extends 'users/userbase.html' %} {% block contents %}
+<section class="predict-layout">
+  <div class="page-panel">
+    <div class="eyebrow">Prediction Engine</div>
+    <h1 class="page-title" style="font-size: clamp(34px, 5vw, 56px);">Check profile trust score.</h1>
+    <p class="page-copy">Enter profile behaviour values. The system will classify the profile as genuine or fake using the existing backend logic.</p>
+
+    <div class="prediction-status">
+      <strong>Current Result:</strong><br />
+      {% if msg %}{{ msg }}{% else %}No prediction submitted yet.{% endif %}
+    </div>
+
+    <div class="feature-grid" style="grid-template-columns: 1fr; margin-top: 18px;">
+      <div class="pro-card">
+        <h3>Input Guide</h3>
+        <p>Use 0/1 values for binary fields. Example: Private Profile = 1 means private, 0 means public.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-panel">
+    <h2 style="font-weight: 900; letter-spacing: -.04em; margin-bottom: 18px;">Profile Prediction Form</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-grid">
+        <div class="full">
+          <label>Full Name</label>
+          <input type="text" name="full_name" required placeholder="Example: John Smith" />
+        </div>
+        <div>
+          <label>Username Length</label>
+          <input type="number" name="nums_length_username" step="0.1" required placeholder="Example: 4" />
+        </div>
+        <div>
+          <label>Name in Username</label>
+          <input type="number" name="name_username" min="0" max="1" required placeholder="0 or 1" />
+        </div>
+        <div>
+          <label>Description Length</label>
+          <input type="number" name="description_length" required placeholder="Example: 120" />
+        </div>
+        <div>
+          <label>Private Profile</label>
+          <input type="number" name="private" min="0" max="1" required placeholder="0 or 1" />
+        </div>
+        <div>
+          <label>Number of Posts</label>
+          <input type="number" name="posts" required placeholder="Example: 50" />
+        </div>
+        <div>
+          <label>Followers</label>
+          <input type="number" name="followers" required placeholder="Example: 800" />
+        </div>
+        <div class="full">
+          <label>Follows</label>
+          <input type="number" name="follows" required placeholder="Example: 320" />
+        </div>
+      </div>
+      <p class="help-text">Your original Django POST fields and prediction connection are unchanged.</p>
+      <div class="action-row">
+        <button class="pro-btn" type="submit"><i class="bi bi-cpu"></i> Predict Profile</button>
+        <button class="pro-btn secondary" type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<a href="{% url 'result' %}" class="pro-btn report-float"><i class="bi bi-file-earmark-text"></i> View Report</a>
+{% endblock %}
