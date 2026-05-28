@@ -1,29 +1,8 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.Python
-.venv/
-venv/
-env/
-
-# Django/local
-*.sqlite3
-db.sqlite3
-staticfiles/
-media/*
-!media/.gitkeep
-!media/train.csv
-!media/test.csv
-!media/rf_model.pkl
-.env
-
-# OS/editor
-.DS_Store
-.vscode/
-.idea/
 venv/
 __pycache__/
 *.pyc
 db.sqlite3
+.env
+*.log
+.DS_Store
+media/profile_pics/

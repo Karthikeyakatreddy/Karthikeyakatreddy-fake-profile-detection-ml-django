@@ -1,0 +1,5 @@
+[2026-05-28 03:10:06] Full Name: sri sai karthikeya katreddy, Profile Pic: 0, Followers: 2222, Follows: 222, Prediction (0 = real, 1 = fake): 1
+[2026-05-28 03:10:49] Full Name: sri sai, Profile Pic: 0, Followers: 1000, Follows: 1000, Prediction (0 = real, 1 = fake): 1
+[2026-05-28 03:11:28] Full Name: karthikeya katreddy, Profile Pic: 0, Followers: 10000, Follows: 10000, Prediction (0 = real, 1 = fake): 1
+[2026-05-28 03:16:23] Full Name: katreddy, Profile Pic: 0, Followers: 1000, Follows: 800, Prediction (0 = real, 1 = fake): 1
+[2026-05-28 03:16:55] Full Name: kk, Profile Pic: 0, Followers: 10000, Follows: 10000, Prediction (0 = real, 1 = fake): 1

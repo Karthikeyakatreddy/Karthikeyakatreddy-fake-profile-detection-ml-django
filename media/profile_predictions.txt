@@ -1,0 +1,7 @@
+Timestamp | Full Name | Profile Pic | Nums in Username | Fullname Length | Name in Username | Description Length | Private | Posts | Followers | Follows
+----------------------------------------------------------------------------------------------------
+2026-05-28 03:10:06 | sri sai karthikeya katreddy | 0 | 6 | 27 | 0 | 222 | 0 | 22 | 2222 | 222
+2026-05-28 03:10:49 | sri sai | 0 | 8 | 7 | 1 | 120 | 1 | 70 | 1000 | 1000
+2026-05-28 03:11:28 | karthikeya katreddy | 0 | 4 | 19 | 0 | 120 | 1 | 500 | 10000 | 10000
+2026-05-28 03:16:23 | katreddy | 0 | 10 | 8 | 1 | 200 | 1 | 90 | 1000 | 800
+2026-05-28 03:16:55 | kk | 0 | 2 | 2 | 1 | 200 | 1 | 100 | 10000 | 10000
